@@ -1997,6 +1997,7 @@ aside .pkp_block,
   mask: var(--ico-book) center/contain no-repeat;
 }
 .current_issue .read-more { display: inline-flex; align-items: center; gap: 8px; }
+.current_issue .read-more .glyphicon { display: none; }
 .current_issue .read-more::after {
   content: ""; width: 1em; height: 1em;
   background-color: currentColor;
