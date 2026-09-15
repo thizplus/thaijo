@@ -2540,6 +2540,9 @@ aside .pkp_block:hover,
   background: var(--c-n-0);
   padding: var(--sp-6);
 }
+@media (max-width: 767px) {
+  .page_index_journal .journal-description { padding: var(--sp-3) var(--sp-4); }
+}
 .page_index_journal .journal-description::before {
   left: 0; right: 0; top: 0; bottom: auto;
   width: auto; height: 3px;
