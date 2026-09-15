@@ -3205,7 +3205,7 @@ form.search-form {
   .mourning-ribbon { width: 28px; }
 }
 @media (max-width: 767px) {
-  :root { --gutter: 30px; }
+  :root { --gutter: 16px; }
   .mourning-ribbon { width: 22px; }
 }
 
