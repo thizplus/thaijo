@@ -190,6 +190,9 @@ footer[role="contentinfo"] > .container {
   padding-top: var(--sp-6);
   padding-bottom: var(--sp-8);
 }
+@media (max-width: 767px) {
+  .pkp_structure_content { padding-top: var(--sp-4); padding-bottom: var(--sp-6); }
+}
 
 /* ---- สัดส่วนคอลัมน์ ---- */
 
@@ -2816,7 +2819,7 @@ footer[role="contentinfo"]::before { height: 3px; background: var(--c-brand-500)
 .navbar-brand-logo img {
   filter: none;
   max-height: 70px;
-  max-width: 420px;
+  max-width: 600px;
   transition: opacity var(--transition);
 }
 .navbar-brand.navbar-brand-logo:hover img { opacity: .62; }
@@ -2825,11 +2828,11 @@ footer[role="contentinfo"]::before { height: 3px; background: var(--c-brand-500)
 .navbar-header { gap: 0; }
 
 @media (max-width: 991px) {
-  .navbar-brand-logo img { max-height: 56px; max-width: 320px; }
+  .navbar-brand-logo img { max-height: 56px; max-width: 400px; }
   .navbar-brand.navbar-brand-logo { padding: 0; }
 }
 @media (max-width: 767px) {
-  .navbar-brand-logo img { max-height: 44px; max-width: 240px; }
+  .navbar-brand-logo img { max-height: 44px; max-width: 280px; }
   .navbar-brand.navbar-brand-logo { padding: 0; border-radius: 0; }
 }
 
