@@ -2814,9 +2814,10 @@ footer[role="contentinfo"]::before { height: 3px; background: var(--c-brand-500)
 .navbar-brand.navbar-brand-logo:hover { background: transparent; }
 
 .navbar-brand-logo img {
-  filter: brightness(0);
-  max-height: 104px;
-  transition: opacity var(--transition), filter var(--transition);
+  filter: none;
+  max-height: 70px;
+  max-width: 420px;
+  transition: opacity var(--transition);
 }
 .navbar-brand.navbar-brand-logo:hover img { opacity: .62; }
 
@@ -2824,11 +2825,11 @@ footer[role="contentinfo"]::before { height: 3px; background: var(--c-brand-500)
 .navbar-header { gap: 0; }
 
 @media (max-width: 991px) {
-  .navbar-brand-logo img { max-height: 66px; }
+  .navbar-brand-logo img { max-height: 56px; max-width: 320px; }
   .navbar-brand.navbar-brand-logo { padding: 0; }
 }
 @media (max-width: 767px) {
-  .navbar-brand-logo img { max-height: 52px; }
+  .navbar-brand-logo img { max-height: 44px; max-width: 240px; }
   .navbar-brand.navbar-brand-logo { padding: 0; border-radius: 0; }
 }
 
