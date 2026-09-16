@@ -236,7 +236,7 @@ footer[role="contentinfo"] > .container {
    ทั้งสี่ค่าจูนมือให้พอดีกันที่จอ desktop เท่านั้น พอย่อจอเมนูจะทับโลโก้
    -------------------------------------------------------------------------- */
 #headerNavigationContainer.navbar-default {
-  background-color: var(--c-header-bg);
+  background: url('../assets/img/header-bg.png') center/cover no-repeat var(--c-header-bg);
   border: 0;
   border-radius: 0;
   height: auto;
@@ -516,7 +516,7 @@ footer[role="contentinfo"] > .container {
   }
   .navbar-default .dropdown-menu li > a { color: var(--c-on-accent); }
 
-  .pull-md-right { width: 100%; margin: var(--sp-3) 0 0; }
+  .pull-md-right { width: 100%; margin: var(--sp-5) 0 0; }
   .navbar-form { width: 100%; }
   .navbar-form .form-group { flex: 1 1 auto; }
   .navbar-form .form-control { min-width: 0; }
@@ -2342,15 +2342,16 @@ footer[role="contentinfo"] img:hover { opacity: 1; }
 .navbar-form {
   display: flex;
   gap: 0;
-  border: 1px solid var(--c-n-300);
+  border: 1px solid rgba(255,255,255,.6);
   border-radius: 8px;
   overflow: hidden;
   background: var(--c-n-0);
+  box-shadow: 0 0 30px 10px rgba(255,255,255,.6), 0 0 60px 20px rgba(255,255,255,.35), 0 0 100px 40px rgba(255,255,255,.15);
   transition: border-color var(--transition), box-shadow var(--transition);
 }
 .navbar-form:focus-within {
   border-color: var(--c-n-900);
-  box-shadow: 0 0 0 3px var(--c-n-100);
+  box-shadow: 0 0 35px 12px rgba(255,255,255,.7), 0 0 70px 25px rgba(255,255,255,.4), 0 0 110px 50px rgba(255,255,255,.2);
 }
 .navbar-form .form-group { flex: 1 1 auto; margin: 0; }
 .navbar-form .form-control {
@@ -2464,7 +2465,7 @@ footer[role="contentinfo"] img:hover { opacity: 1; }
 }
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus { background: var(--c-n-50); border-color: var(--c-n-900); }
-.navbar-default .navbar-toggle .icon-bar { background-color: var(--c-n-900); width: 20px; }
+.navbar-default .navbar-toggle .icon-bar { background-color: var(--c-accent); width: 20px; }
 
 /* ริบบิ้นไว้อาลัยไม่ทับโลโก้ */
 @media (max-width: 1279px) { .navbar-header { padding-left: 40px; } }
@@ -2659,9 +2660,9 @@ footer[role="contentinfo"]::before { height: 3px; background: var(--c-brand-500)
 .navbar-default #navigationUser > li a { height: 42px; }
 
 /* (2) โลโก้ใหญ่ขึ้น บล็อกดำหายใจได้ */
-:root { --header-logo-row: 140px; }
+:root { --header-logo-row: 200px; }
 .navbar-brand.navbar-brand-logo { padding: 18px 26px; border-radius: 12px; }
-.navbar-brand-logo img { max-height: 92px; }
+.navbar-brand-logo img { max-height: 150px; }
 @media (max-width: 991px) {
   :root { --header-logo-row: auto; }
   .navbar-brand-logo img { max-height: 62px; }
@@ -2818,7 +2819,7 @@ footer[role="contentinfo"]::before { height: 3px; background: var(--c-brand-500)
 
 .navbar-brand-logo img {
   filter: none;
-  max-height: 70px;
+  max-height: 150px;
   max-width: 600px;
   transition: opacity var(--transition);
 }
@@ -3883,11 +3884,11 @@ body { overflow-x: visible; max-width: none; }
 @media (max-width: 991px) { :root { --topbar-h: 44px; } }
 
 #headerNavigationContainer.navbar-default {
-  background-image: linear-gradient(
-    180deg,
-    var(--c-accent) 0,                var(--c-accent) var(--topbar-h),
-    var(--c-n-0)    var(--topbar-h),  var(--c-n-0)    100%
-  ) !important;
+  background:
+    linear-gradient(180deg,
+      var(--c-accent) 0, var(--c-accent) var(--topbar-h),
+      transparent var(--topbar-h), transparent 100%),
+    url('../assets/img/header-bg.png') center/cover no-repeat !important;
 }
 #headerNavigationContainer > .container-fluid:first-child .row,
 #navigationUser { min-height: var(--topbar-h) !important; }
@@ -3965,7 +3966,7 @@ body { overflow-x: visible; max-width: none; }
     position: static;
     width: 100%;
     max-width: 100%;
-    margin: 0;
+    margin: var(--sp-5) 0 0;
     padding: 0;
     height: auto;
   }
@@ -4960,7 +4961,7 @@ aside .pkp_block:last-child { margin-bottom: 0; }
 @media (min-width: 992px) {
   #headerNavigationContainer.navbar-default {
     position: sticky;
-    top: calc(-1 * (258px - 72px - 10px));   /* = -176px */
+    top: calc(-1 * (300px - 60px - 10px));   /* logo 150px ทำให้ header สูงขึ้น */
     z-index: 1035;
   }
   /* กันไม่ให้หัวข้อที่ลิงก์ไปถูกแถบเมนูบัง */
@@ -5186,12 +5187,11 @@ aside .pkp_block:last-child { margin-bottom: 0; }
    แถบส้มบนสุดยังอยู่เหมือนเดิม (ไล่เป็นโปร่งใสหลังพ้น --topbar-h)
    ========================================================================== */
 #headerNavigationContainer.navbar-default {
-  background-color: transparent !important;
-  background-image: linear-gradient(
-    180deg,
-    var(--c-accent) 0,               var(--c-accent) var(--topbar-h),
-    transparent    var(--topbar-h),  transparent    100%
-  ) !important;
+  background:
+    linear-gradient(180deg,
+      var(--c-accent) 0, var(--c-accent) var(--topbar-h),
+      transparent var(--topbar-h), transparent 100%),
+    url('../assets/img/header-bg.png') center/cover no-repeat !important;
   border-bottom: 0;
   box-shadow: none;
 }
@@ -5205,7 +5205,7 @@ aside .pkp_block:last-child { margin-bottom: 0; }
   /* ไม่ต้องเว้นช่องว่างโปร่งใสใต้กล่องเมนูมากนัก */
   #nav-menu { padding-bottom: var(--sp-3); }
   /* ปรับจุดหยุดของ sticky ตามความสูงที่เปลี่ยนไป (แถบเมนู 60px + เว้นบน 10px) */
-  #headerNavigationContainer.navbar-default { top: calc(-1 * (246px - 60px - 10px)); }
+  #headerNavigationContainer.navbar-default { top: calc(-1 * (300px - 60px - 10px)); }
 }
 
 /* พอ header โปร่งใส เนื้อหาที่ไหลอยู่ข้างหลังจะโผล่ครึ่งบรรทัดในช่องว่าง 10px
@@ -5218,15 +5218,7 @@ aside .pkp_block:last-child { margin-bottom: 0; }
     }
   }
 }
-/* เบลออย่างเดียวยังเห็นสีเนื้อหาจาง ๆ — เติมฝ้าขาวบาง ๆ ทับอีกชั้นให้สะอาด */
-@media (min-width: 992px) {
-  #headerNavigationContainer.navbar-default {
-    background-image:
-      linear-gradient(180deg,
-        var(--c-accent) 0,              var(--c-accent) var(--topbar-h),
-        rgba(255,255,255,.72) var(--topbar-h), rgba(255,255,255,.72) 100%) !important;
-  }
-}
+/* ฝ้าขาวบาง ๆ — ไม่ต้องแล้วเพราะใช้ภาพ bg แทน */
 
 /* ==========================================================================
    [30] คืนค่า hover ของเมนูกลับเป็น "พื้นสี accent + ตัวหนังสือขาว"
